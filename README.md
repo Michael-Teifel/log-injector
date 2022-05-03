@@ -13,3 +13,11 @@
 
 ### Architecture Diagram
 ![log-injeector-diagram](https://user-images.githubusercontent.com/11655553/166531560-314498c8-5755-4e97-93ce-377d7520fccc.PNG)
+
+
+### Documentation
+
+Starting API
+```
+node server/api.js <hostname> <port>
+```
