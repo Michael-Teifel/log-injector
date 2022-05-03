@@ -1,0 +1,12 @@
+{
+  "name": "log-injector",
+  "version": "1.0.0",
+  "description": "Cloud Loggin Service for Software Developers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Michael Teifel",
+  "license": "ISC"
+}
