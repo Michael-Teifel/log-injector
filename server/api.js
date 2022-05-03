@@ -1,4 +1,6 @@
 // This file is the API Sever.
+require('dotenv').config();
+
 const express = require('express');
 const app = express();
 
