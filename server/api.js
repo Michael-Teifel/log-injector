@@ -1,13 +1,23 @@
 // This file is the API Sever.
 require('dotenv').config();
 
+
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const HOST = process.argv[2];
 const PORT = process.argv[3];
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.status(200).sendFile(path.resolve('__dirname', '..', 'client', 'src', 'index.html'));
+})
+
+app.get('/bundle.js', (req, res) => {
+  res.status(200).sendFile(path.resolve('__dirname', '..', 'client', 'build', 'bundle.js'));
+})
 
 const logItemController = require('./controllers/log_item_controller');
 
