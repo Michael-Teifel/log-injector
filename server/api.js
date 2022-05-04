@@ -7,10 +7,12 @@ const app = express();
 const HOST = process.argv[2];
 const PORT = process.argv[3];
 
+app.use(express.json());
+
 const logItemController = require('./controllers/log_item_controller');
 
 app.post('/log_item', 
-  logItemController.createLogItem, 
+  logItemController.create, 
   (req, res) => {
     res.status(200).send('Item Logged')
   }

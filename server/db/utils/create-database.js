@@ -2,9 +2,13 @@ require('dotenv').config();
 const db = require('../index.js');
 
 const queryText = `
+  DROP TABLE IF EXISTS log_items;
   CREATE TABLE log_items (
-    _id SERIAL
-  )
+    _id SERIAL,
+    name text NOT NULL,
+    value jsonb NOT NULL, 
+    _created_at timestamptz DEFAULT current_timestamp
+  );
 `;
 const queryParams = [];
 
@@ -12,8 +16,8 @@ const queryParams = [];
 
 db.query(queryText, queryParams, (err, res) => {
   if (err) {
-    console.log(err);
+    return err
   } else {
-    console.log(res);
+    return res
   }
 })
