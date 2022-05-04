@@ -12,7 +12,7 @@ const PORT = process.argv[3];
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.status(200).sendFile(path.resolve('__dirname', '..', 'client', 'src', 'index.html'));
+  res.status(200).sendFile(path.resolve('__dirname', '..', 'client', 'build', 'index.html'));
 })
 
 app.get('/bundle.js', (req, res) => {
