@@ -1,6 +1,11 @@
 const { Pool } = require('pg');
 
-const pool = new Pool();
+const connectionString = process.env.DATABASE_CONNECTION_STRING
+// console.log(process.env);
+console.log(connectionString);
+const pool = new Pool({
+  connectionString
+});
 
 module.exports = {
     query: (text, params, callback) => {

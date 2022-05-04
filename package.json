@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "api-dev-server": "nodemon server/api.js localhost 8000"
+    "api-dev-server": "nodemon server/api.js localhost 8000",
+    "create-db": "node ./server/db/utils/create-database.js"
   },
   "keywords": [],
   "author": "Michael Teifel",
