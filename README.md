@@ -17,9 +17,12 @@
 
 ### Documentation
 
-###### Starting API
+###### Start the API Dev Server
 ```
-node server/api.js <hostname> <port>
+npm run api-dev-server
 ```
 
-###### 
+###### Starting the Client Dev Server
+```
+npm run client-dev-server
+```
