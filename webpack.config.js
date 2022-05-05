@@ -18,7 +18,27 @@ module.exports = (env) => {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
-      }]
+      },
+      {
+        test: /client\/src\/.+\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader', 
+          'css-loader', 
+           {
+             loader: 'postcss-loader',
+             options: {
+               postcssOptions: {
+                 plugins: {
+                  tailwindcss: {},
+                  autoprefixer: {},
+                }
+               }
+             }
+           }
+          ]
+      }
+    ]
     },
     plugins: [new HtmlWebpackPlugin({
       template: './client/src/index.html'

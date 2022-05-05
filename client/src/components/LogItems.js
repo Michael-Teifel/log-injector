@@ -15,5 +15,10 @@ export default function(props) {
     return <LogItem key={item._id} name={item.name} value={item.value} createdAt={item._created_at} />
   })
 
-  return <div className='log-items'>{logItemElements}</div>
+  return (
+    <div className='flex pt-5'>
+      <div className='log-items w-max max-h-full overflow-scroll'>{logItemElements}</div>
+      <div id='view' className='grow'></div>
+    </div>
+  )
 }
