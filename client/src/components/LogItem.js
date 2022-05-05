@@ -6,7 +6,7 @@ export default function LogItem(props) {
     previewValue = previewValue.slice(0,37) + '...';
   }
   return (
-    <div className='log-item my-3 border p-3 rounded hover:cursor-pointer' >
+    <div className='log-item my-3 border p-3 rounded hover:cursor-pointer' onClick={props.handleClick}>
       <p className='font-bold'>name: {props.name}</p>
       <p>logged_at: {props.createdAt}</p>
       <p>value: {previewValue}</p>
