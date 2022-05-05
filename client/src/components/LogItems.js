@@ -9,7 +9,10 @@ export default function(props) {
   useEffect(() => {
     fetch('http://localhost:8000/log-items')
       .then(response => response.json())
-      .then(data => setLogItems(data))
+      .then(data => {
+        setLogItems(data)
+        setSelectedItem(data[0])
+      })
       .catch(err => console.log(err))
   }, [])
   
