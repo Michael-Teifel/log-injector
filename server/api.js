@@ -35,7 +35,7 @@ app.get('/log-items',
 app.post('/log_item', 
   logItemController.create, 
   (req, res) => {
-    res.status(200).send('Item Logged')
+    res.status(200).json({status: 'success'})
   }
 );
 

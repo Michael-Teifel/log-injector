@@ -24,7 +24,8 @@ module.exports = (env) => {
       template: './client/src/index.html'
     })],
     devServer: {
-      static: './client/build'
+      static: './client/build',
+      port: 8888
     }
   }
 }
