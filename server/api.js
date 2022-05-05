@@ -24,10 +24,11 @@ app.get('/bundle.js', (req, res) => {
 const logItemController = require('./controllers/log_item_controller');
 
 app.get('/log-items', 
+  logItemController.read,
   (req, res) => {
     console.log('Hit log-items route');
     // res.status(200).json([{name: sample, value: {}}]);
-    res.status(200).json([{id: 1, name: "name", value: {} }])
+    res.status(200).json(res.locals.logItems)
   }
 );
 
