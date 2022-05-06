@@ -10,7 +10,7 @@ export default function LogItem(props) {
     <div className={`log-item my-3 border p-3 rounded hover:cursor-pointer ${bgClass}`} onClick={props.handleClick}>
       <div className='flex justify-between'>
         <p className='font-bold'>name: {props.name}</p>
-        <p className=''>X</p>
+        <p className='' onClick={() => props.deleteItem(props.id)}>X</p>
       </div>
       <p>logged_at: {props.createdAt}</p>
       <p>value: {previewValue}</p>

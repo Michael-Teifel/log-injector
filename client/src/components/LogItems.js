@@ -15,6 +15,23 @@ export default function(props) {
       })
       .catch(err => console.log(err))
   }, [])
+
+  function deleteItem(id) {
+    fetch(`http://localhost:8000/log_item/${id}`, {
+      method: 'DELETE'
+    })
+      .then(response => response.json())
+      .then(data => {
+        if(data.status === 'success') {
+          fetch('http://localhost:8000/log-items')
+            .then(response => response.json())
+            .then(data => {
+              setLogItems(data)
+            })
+            .catch(err => console.log(err))
+        }
+      })
+  }
   
   const logItemElements = logItems.map(item => {
     const handleClick = () => setSelectedItem(item);
@@ -23,11 +40,13 @@ export default function(props) {
     return (
       <LogItem 
         key={item._id}
+        id={item._id}
         name={item.name} 
         value={item.value} 
         createdAt={item._created_at}
         isSelected={isSelected}  
-        handleClick={handleClick} />)
+        handleClick={handleClick} 
+        deleteItem={deleteItem} />)
   })
 
   return (
