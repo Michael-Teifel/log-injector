@@ -34,5 +34,19 @@ logItemController.read = function(req, res, next) {
   })
 }
 
+logItemController.delete = function(req, res, next) {
+  const queryText = `DELETE FROM log_items WHERE _id=$1`
+  const params = [req.params.id];
+
+  db.query(queryText, params, (err, queryResult) => {
+    if(err) {
+      next({log: 'Error in logItemController.read: ' + err.message})
+    } else {
+      res.locals.deletedItem = queryResult.rows
+      next()
+    }
+  })
+}
+
 
 module.exports = logItemController;

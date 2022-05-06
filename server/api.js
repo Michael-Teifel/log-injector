@@ -39,6 +39,13 @@ app.post('/log_item',
   }
 );
 
+app.delete('/log_item/:id', 
+  logItemController.delete, 
+  (req, res) => {
+    res.status(200).json({status: 'success'})
+  }
+);
+
 // 404 Errors for Pages Not Found
 app.use((req, res) => {
   res.status(404).send('Page not Found');
