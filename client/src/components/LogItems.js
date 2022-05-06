@@ -30,7 +30,7 @@ export default function(props) {
   return (
     <div className='flex pt-5 max-h-full' >
       <div className='log-items pr-4 w-max  max-h-full overflow-scroll'>{logItemElements}</div>
-      <div id='view' className='grow w-full overflow-scroll pr-5'>
+      <div id='view' className='grow w-full overflow-scroll pr-5 pl-3'>
         <LogViewer name={selectedItem.name} value={selectedItem.value} />
       </div>
     </div>
