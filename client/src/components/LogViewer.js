@@ -31,7 +31,13 @@ export default function(props) {
       {/* <p className='break-all'>{stringifiedValue}</p> */}
       <JSONTree 
         data={props.value} 
-        getItemString={(type, data, itemType, itemString, keyPath) => <span>{itemType} {type}</span>}
+        // getItemString={(type, data, itemType, itemString, keyPath) => {
+        //   console.log(keyPath);
+        //   console.log(type);
+        //   console.log(itemType)
+        //   // if(type === 'Array') itemType = ''
+        //   return <span>{itemType} {itemString}</span>}
+        // }
         labelRenderer={function([key], nodeType, expanded, expandable) {
           if(key === 'root') return <strong>{props.name}</strong>
           return key

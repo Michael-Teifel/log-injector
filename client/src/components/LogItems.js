@@ -18,12 +18,15 @@ export default function(props) {
   
   const logItemElements = logItems.map(item => {
     const handleClick = () => setSelectedItem(item);
+    let isSelected = false;
+    if(item._id === selectedItem._id) isSelected = true;
     return (
       <LogItem 
         key={item._id}
         name={item.name} 
         value={item.value} 
-        createdAt={item._created_at}  
+        createdAt={item._created_at}
+        isSelected={isSelected}  
         handleClick={handleClick} />)
   })
 
