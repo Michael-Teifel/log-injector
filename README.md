@@ -11,10 +11,6 @@
 - [ ] A user visits the web page and all there logged variables are displayed from the DB.
 
 
-### Architecture Diagram
-![log-injeector-diagram](https://user-images.githubusercontent.com/11655553/166531560-314498c8-5755-4e97-93ce-377d7520fccc.PNG)
-
-
 ### Documentation
 
 ###### Start the API Dev Server
